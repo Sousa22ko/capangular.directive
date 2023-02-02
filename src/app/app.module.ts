@@ -4,17 +4,25 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DateFormatterDirective } from './shared/directives/dateFormat.directive';
+import { CurrencyBrlDirective } from './shared/directives/currency-brl.directive';
+import { CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
+// import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    DateFormatterDirective
+    DateFormatterDirective,
+    CurrencyBrlDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    // MatInputModule
   ],
-  providers: [],
+  providers: [CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
